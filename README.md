@@ -12,7 +12,7 @@ Copy **shelly-infuxdb.sh** to **/usr/local/bin**
 
 Add exec permissions to **shelly-influxdb.sh**
 
-> chmod +x /usr/local/bin/shelly-influxdb.sh
+> sudo chmod +x /usr/local/bin/shelly-influxdb.sh
 
 Copy **shelly-influxdb.conf** to **/usr/local/etc** and customize/edit your settings
 
@@ -40,16 +40,6 @@ ExecStart=/bin/sh -c 'while true; do /usr/local/bin/shelly-influxdb.sh /usr/loca
 WantedBy=multi-user.target
 ```
 
-Reload services
-
-> sudo systemctl daemon-reload
->
-> sudo systemctl restart shelly-influxdb.service
-
-Verify service status
-
-> sudo systemctl status shelly-influxdb.service
-
 NOTE: avoid log flooding (every 10 seconds) on /etc/systemd/system/shelly-influxdb.service redirecting stdout & stderr to null
 
 ```
@@ -65,6 +55,16 @@ StandardError=null
 [Install]
 WantedBy=multi-user.target
 ```
+
+Reload services
+
+> sudo systemctl daemon-reload
+>
+> sudo systemctl restart shelly-influxdb.service
+
+Verify service status
+
+> sudo systemctl status shelly-influxdb.service
 
 ## Grafana
 

@@ -1,0 +1,5 @@
+Al reiniciar el servicio no arranca
+
+○ shelly-influxdb.service - Run shelly influxdb script every 10 seconds
+     Loaded: loaded (/etc/systemd/system/shelly-influxdb.service; disabled; preset: enabled)
+     Active: inactive (dead)
