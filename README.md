@@ -56,10 +56,14 @@ StandardError=null
 WantedBy=multi-user.target
 ```
 
+Enable service
+
+> sudo systemctl enable shelly-influxdb.service
+
 Reload services
 
 > sudo systemctl daemon-reload
->
+
 > sudo systemctl restart shelly-influxdb.service
 
 Verify service status
