@@ -6,9 +6,21 @@ It only requires having the command-line tools curl and jq installed.
 
 You need to have access credentials (password) configured for your Shelly device and have the RPC API enabled. The script assumes that all devices share the same credentials (password).
 
+## USAGE
+
+Customize your settings on **shelly-influxdb.conf**
+
+Use configuration on same path
+
+> sh shelly-infuxdb.sh ./shelly-influxdb.conf
+
+Use global configuration (on /etc/)
+
+> sh shelly-infuxdb.sh /etc/shelly-influxdb.conf
+
 ## TODO
 
-create debian package & use systemd to avoid repetitive looping every 10 seconds in the script
+create debian package & use systemd
 
 ## Grafana
 
