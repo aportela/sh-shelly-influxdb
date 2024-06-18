@@ -31,10 +31,13 @@ Create service definition:
 ```
 [Unit]
 Description=Run shelly influxdb script every 10 seconds
+After=network.target
 
 [Service]
 Type=simple
-ExecStart=/bin/sh -c 'while true; do /usr/local/bin/shelly-influxdb.sh /usr/local/etc/shelly-influxdb.conf; sleep 10; done'
+ExecStart=/bin/sh -c '/usr/local/bin/shelly-influxdb.sh /usr/local/etc/shelly-influxdb.conf'
+Restart=always
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
@@ -45,10 +48,13 @@ NOTE: avoid log flooding (every 10 seconds) on /etc/systemd/system/shelly-influx
 ```
 [Unit]
 Description=Run shelly influxdb script every 10 seconds
+After=network.target
 
 [Service]
 Type=simple
-ExecStart=/bin/sh -c 'while true; do /usr/local/bin/shelly-influxdb.sh /usr/local/etc/shelly-influxdb.conf; sleep 10; done'
+ExecStart=/bin/sh -c '/usr/local/bin/shelly-influxdb.sh /usr/local/etc/shelly-influxdb.conf'
+Restart=always
+RestartSec=10
 StandardOutput=null
 StandardError=null
 
