@@ -43,7 +43,7 @@ RestartSec=10
 WantedBy=multi-user.target
 ```
 
-NOTE: avoid log flooding (every 10 seconds) on /etc/systemd/system/shelly-influxdb.service redirecting stdout & stderr to null
+NOTE: avoid log flooding (every 10 seconds) on /etc/systemd/system/shelly-influxdb.service redirecting stdout & stderr to null & hide notice/info/debug syslog messages
 
 ```
 [Unit]
@@ -57,6 +57,7 @@ Restart=always
 RestartSec=10
 StandardOutput=null
 StandardError=null
+LogLevelMax=3
 
 [Install]
 WantedBy=multi-user.target
